@@ -1,5 +1,5 @@
 // Importing HTTP module
-import http from "http";
+// import http from "http";
 
 // Importing ExpressJS
 import express from "express";
@@ -28,6 +28,17 @@ app.use((req, res) => {
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap"
+        rel="stylesheet"
+      />
+      <style>
+        * {
+          font-family: "Josefin Sans", sans-serif;
+        }
+      </style>
       <title>ExpressJS app</title>
     </head>
     <body>
@@ -39,13 +50,13 @@ app.use((req, res) => {
 });
 
 // Creating server
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 // Defining ports
 const port = 3000;
 const ip = "0.0.0.0";
 
 // Running server
-server.listen(port, ip, (err) => {
+app.listen(port, ip, (err) => {
   console.log("🟢 Server listening in http://localhost:3000");
 });
