@@ -50,8 +50,7 @@ app.use("/about", (req, res) => {
 });
 
 // GET /add-product
-app.use("/add-product", (req, res, next) => {
-  if (req.method === "POST") return next();
+app.get("/add-product", (req, res, next) => {
   // Serving the form
   console.log("⚠️  Serving the form");
   res.send(`
@@ -96,7 +95,7 @@ app.use("/add-product", (req, res, next) => {
 });
 
 // POST
-app.use("/add-product", (req, res) => {
+app.post("/add-product", (req, res) => {
   //Realizando extracción de los datos de la petición
   for (const prop in req.body) {
     console.log(`${prop}: ${req.body[prop]}`);
