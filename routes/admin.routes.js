@@ -54,20 +54,45 @@ router.get("/add-product", (req, res, next) => {
 
         body {
           background-color: #333;
+          text-align: center;
         }
 
-        h1, p, label {
-          color: #FFFF;
+        h1,
+        p,
+        label {
+          color: #ffff;
+          font-size: 20px;
+        }
+
+        input {
+          font-weight: bolder;
+          font-size: 20px;
+          border-radius: 6px;
+        }
+
+        button {
+          border-radius: 6px;
+          font-size: 20px;
+        }
+
+        form {
+          margin-top: 200px;
+        }
+
+        h1 {
+          margin-top: 30px;
+          font-size: 60px;
         }
       </style>
-      <title>About</title>
+      <title>Adding form</title>
     </head>
     <body>
+      <h1>Add products now</h1>
       <form action="/add-product" method="POST">
         <label for="title"><b>Title</b></label>
-        <input type="text" name="title" style="border-radius: 5px;">
+        <input type="text" name="title" style="border-radius: 5px" />
         <label for="title"><b>Description</b></label>
-        <input type="text" name="description" style="border-radius: 5px;">
+        <input type="text" name="description" style="border-radius: 5px" />
         <button type="submit"><b>Add product</b></button>
       </form>
     </body>
