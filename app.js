@@ -19,7 +19,7 @@ const app = express(); // (req, res) => { CODE }
 app.use(express.urlencoded({ extended: true }));
 
 // Adding admin router
-app.use(adminRouter);
+app.use("/admin", adminRouter);
 
 // Adding shop router
 app.use(shopRouter);
