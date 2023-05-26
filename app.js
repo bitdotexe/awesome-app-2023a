@@ -5,18 +5,27 @@
 import express from "express";
 
 // Importing "http-status" library
-import httpStatus from "http-status";
+// import httpStatus from "http-status";
 
 // Importing the router
 import adminRouter from "./routes/admin.routes.js";
 import shopRouter from "./routes/shop.routes.js";
 import errorRouter from "./routes/error.routes.js";
 
+// Importing ROOT_DIR
+import { ROOT_DIR } from "./helpers/paths.js";
+
+// Importing path
+import path from "path";
+
 // Creating an Express instance
 const app = express(); // (req, res) => { CODE }
 
 // Client data parser Middleware
 app.use(express.urlencoded({ extended: true }));
+
+// We register the static files server middleware
+app.use(express.static(path.join(ROOT_DIR, "public")));
 
 // Adding admin router
 app.use("/admin", adminRouter);
