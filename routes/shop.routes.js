@@ -6,8 +6,12 @@ import path from "path";
 // Creating an Express router instance
 const router = Router();
 
+// Importing products
+import { products } from "./admin.routes.js";
+
 // GET /
 router.get("/", (req, res) => {
+  console.log(products);
   console.log("✔ Serving the '/' route");
   res.sendFile(path.resolve("views", "shop.html"));
 });
