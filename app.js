@@ -7,6 +7,9 @@ import express from "express";
 // Importing "http-status" library
 // import httpStatus from "http-status";
 
+// Template Engine
+import { engine } from "express-handlebars";
+
 // Importing the router
 import adminRouter from "./routes/admin.routes.js";
 import shopRouter from "./routes/shop.routes.js";
@@ -20,6 +23,23 @@ import path from "path";
 
 // Creating an Express instance
 const app = express(); // (req, res) => { CODE }
+
+// We create the template engine instance
+const hbsTemplateEngine = engine({
+  // Template file extension
+  extname: ".hbs",
+  // Default design name
+  defaultLayout: "main",
+});
+
+// TE1. We register the Express instance
+app.engine("hbs", hbsTemplateEngine);
+
+// TE2. We select the tamplate engine
+app.set("view engine", "hbs");
+
+// TE3. We establish the views route
+app.set("views", path.resolve("views"));
 
 // Client data parser Middleware
 app.use(express.urlencoded({ extended: true }));

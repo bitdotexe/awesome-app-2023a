@@ -13,7 +13,9 @@ import { products } from "./admin.routes.js";
 router.get("/", (req, res) => {
   console.log(products);
   console.log("✔ Serving the '/' route");
-  res.sendFile(path.resolve("views", "shop.html"));
+  res.render("shop");
+  // res.sendFile(path.resolve("views", "shop.html"));
+  // res.render("shop", { layout: false });
 });
 
 // GET /about
