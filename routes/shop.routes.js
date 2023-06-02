@@ -14,8 +14,9 @@ router.get("/", (req, res) => {
   res.render("shop", {
     shop: "active",
     docTitle: "Shop",
-    products,
     viewStyle: "/css/product.css",
+    isProductsListEmpty: products.length === 0,
+    products,
   });
 });
 
