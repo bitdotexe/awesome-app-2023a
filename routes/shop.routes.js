@@ -1,7 +1,5 @@
 // Importing the ExpressJS router
 import { Router } from "express";
-// Importing the Router manager
-import path from "path";
 
 // Creating an Express router instance
 const router = Router();
@@ -13,7 +11,12 @@ import { products } from "./admin.routes.js";
 router.get("/", (req, res) => {
   console.log(products);
   console.log("✔ Serving the '/' route");
-  res.render("shop", { shop: "active", docTitle: "Shop" });
+  res.render("shop", {
+    shop: "active",
+    docTitle: "Shop",
+    products,
+    viewStyle: "/css/product.css",
+  });
 });
 
 // GET /about
