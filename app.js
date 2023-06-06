@@ -56,14 +56,6 @@ app.use(shopRouter);
 // Adding error router
 app.use(errorRouter);
 
-// // Registering 404 ERROR middleware
-// app.use((req, res) => {
-//   res.status(httpStatus.NOT_FOUND).send(`
-//   <h1 style="color: Crimson; text-align: center; font-size: 400%; margin: 3em 0 0 0;">404</h1>
-//   <h1 style="color: Crimson; text-align: center; font-size: 400%; margin: 3em 0 0 0;">RESOURCE NOT FOUND</h1>
-//   `);
-// });
-
 // Defining ports
 const port = 3000;
 const ip = "0.0.0.0";

@@ -1,16 +1,11 @@
 // Importing the ExpressJS router
 import { Router } from "express";
-import { read } from "fs";
-// Importing the Router manager
-import path from "path";
+import { notFoundError } from "../controllers/httpError.controller.js";
 
 // Creating an Express router instance
 const router = Router();
 
 // GET /
-router.use("", (req, res) => {
-  console.log("✔ Serving the 'error' route");
-  res.render("404");
-});
+router.use(notFoundError);
 
 export default router;
