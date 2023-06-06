@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .product-form {
   width: 20rem;
   max-width: 90%;
